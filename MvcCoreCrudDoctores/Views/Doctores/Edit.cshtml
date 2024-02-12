@@ -1,0 +1,26 @@
+﻿@model Doctor
+
+<div class="container mt-5">
+    <h1>Modificar Doctor</h1>
+    <p>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Doctores">
+            Atras
+        </a>
+    </p>
+
+    <form method="post" asp-action="Edit">
+        <input type="hidden" name="DOCTOR_NO" value="@Model.DOCTOR_NO" />
+        <label>Hospital cod:</label>
+        <input class="form-control" type="text" name="HOSPITAL_NO" value="@Model.HOSPITAL_NO" />
+        <label>Apellido: </label>
+        <input class="form-control" type="text" name="Apellido" value="@Model.Apellido" />
+        <label>Especialidad:</label>
+        <input class="form-control" type="text" name="Especialidad" value="@Model.Especialidad" />
+        <label>Salario:</label>
+        <input class="form-control" type="text" name="Salario" value="@Model.Salario" />
+        <br />
+        <button class="btn btn-success" type="submit">
+            Modificar Doctor
+        </button>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+﻿@model List<Doctor>
+
+<div class="container mt-5">
+    <h1>Doctores VIEW</h1>
+    <hr/>
+    <p>
+        <a class="btn btn-dark" asp-controller="Doctores" asp-action="Create">
+            Nuevo Doctor
+        </a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Salario</th>
+                <th>-</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Doctor doc in Model)
+            {
+                <tr>
+                    <td>@doc.Apellido</td>
+                    <td>@doc.Especialidad</td>
+                    <td>@doc.Salario</td>
+                    <td>
+                        @Html.ActionLink("Detalles", "Detalles", "Doctores", new{id = doc.DOCTOR_NO}, new {@Class="btn btn-info"})
+                        @Html.ActionLink("Editar", "Edit", "Doctores", new{id = doc.DOCTOR_NO}, new {@Class="btn btn-warning"})
+                        @Html.ActionLink("Delete", "Delete", "Doctores", new{DOCTOR_NO = doc.DOCTOR_NO}, new {@Class="btn btn-danger"})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
